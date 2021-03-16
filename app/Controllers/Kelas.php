@@ -23,14 +23,6 @@ class Kelas extends BaseController
 		return view('/Kelas/tampil',$data);
 	}
 
-	public function tambahKelas(){
-		if(session()->get('level')!='admin'){
-			return redirect()->to('/petugas/dashboard');
-			exit;		
-		}
-		
-		return view('/Kelas/tambah');
-	}
 
 	public function simpanKelas(){
 		if(session()->get('level')!='admin'){
