@@ -9,6 +9,11 @@
     <!-- Bootstrap core CSS -->
 <link href="/css/bootstrap.min.css" rel="stylesheet">
 
+<link href="/fontawesome/css/all.min.css" rel="stylesheet">
+
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+<link rel="icon" href="/favicon.ico" type="image/x-icon">
+
 <meta name="theme-color" content="#563d7c">
 
 
