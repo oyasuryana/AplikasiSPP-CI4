@@ -8,7 +8,7 @@ use CodeIgniter\HTTP\ResponseInterface;
 use Psr\Log\LoggerInterface;
 use App\Models\Modelkelas;
 use App\Models\Modelspp;
-
+use App\Models\Modelsiswa;
 /**
  * Class BaseController
  *
@@ -30,8 +30,12 @@ class BaseController extends Controller
 	 * @var array
 	 */
 	protected $helpers = [];
+	protected $db;
 	protected $kelas;
 	protected $spp; 
+	protected $buildersiswa;
+	protected $siswa;
+
 	/**
 	 * Constructor.
 	 *
@@ -54,5 +58,12 @@ class BaseController extends Controller
 
 		// membuat instance $this->spp dari  Modelspp
 		$this->spp	= New Modelspp;
+
+		// membuat instance $this->spp dari  Modelsiswa
+		$this->siswa	= New Modelsiswa;
+
+		// mengaktifkan query builder untuk tabel siswa
+		$this->db      	= \Config\Database::connect();
+		$this->buildersiswa	= $this->db->table('siswa');
 	}
 }

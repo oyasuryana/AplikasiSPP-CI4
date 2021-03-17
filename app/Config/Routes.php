@@ -45,10 +45,6 @@ $routes->post('/login', 'PetugasController::login');
 $routes->get('/petugas/logout', 'PetugasController::logout');
 
 $routes->get('/petugas/dashboard', 'Dashboardpetugas::index',['filter'=>'otentifikasi']);
-$routes->get('/siswa', 'Siswa::index',['filter'=>'otentifikasi']);
-$routes->get('/siswa/tambah', 'Siswa::tambahSiswa',['filter'=>'otentifikasi']);
-
-
 
 $routes->get('/spp', 'Spp::index',['filter'=>'otentifikasi']);
 $routes->get('/spp/tambah', 'Spp::tambahSpp',['filter'=>'otentifikasi']);
@@ -57,7 +53,6 @@ $routes->get('/spp/edit/(:num)', 'Spp::EditSpp/$1',['filter'=>'otentifikasi']);
 $routes->post('/spp/update', 'Spp::updateSpp',['filter'=>'otentifikasi']);
 $routes->get('/spp/hapus/(:num)', 'Spp::hapusSpp/$1',['filter'=>'otentifikasi']);
 
-
 $routes->get('/kelas', 'Kelas::index',['filter'=>'otentifikasi']);
 $routes->get('/kelas/tambah', 'Kelas::tambahKelas',['filter'=>'otentifikasi']);
 $routes->post('/kelas/simpan', 'Kelas::simpanKelas',['filter'=>'otentifikasi']);
@@ -65,6 +60,12 @@ $routes->get('/kelas/edit/(:num)', 'Kelas::editKelas/$1',['filter'=>'otentifikas
 $routes->post('/kelas/update', 'Kelas::updateKelas',['filter'=>'otentifikasi']);
 $routes->get('/kelas/hapus/(:num)', 'Kelas::hapusKelas/$1',['filter'=>'otentifikasi']);
 
+$routes->get('/siswa', 'Siswa::index',['filter'=>'otentifikasi']);
+$routes->get('/siswa/tambah', 'Siswa::tambahSiswa',['filter'=>'otentifikasi']);
+$routes->post('/siswa/simpan', 'Siswa::simpanSiswa',['filter'=>'otentifikasi']);
+$routes->get('/siswa/hapus/(:num)', 'Siswa::hapusSiswa/$1',['filter'=>'otentifikasi']);
+$routes->get('/siswa/edit/(:num)', 'Siswa::editSiswa/$1',['filter'=>'otentifikasi']);
+$routes->post('/siswa/update', 'Siswa::updateSiswa',['filter'=>'otentifikasi']);
 /*
  * --------------------------------------------------------------------
  * Additional Routing

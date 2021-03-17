@@ -28,8 +28,8 @@
      $htmlData .='<td class="text-center">'.$row['tahun'].'</td>';
      $htmlData .='<td class="text-right">Rp. '.number_format($row['nominal'],0,',','.').'</td>';
      $htmlData .='<td class="text-center">';
-     $htmlData .='<a href="/spp/edit/'.$row['id_spp'].'" class="btn btn-info btn-sm mr-1">..</a>';
-     $htmlData .='<a href="/spp/hapus/'.$row['id_spp'].'" class="btn btn-danger btn-sm">x</a>';
+     $htmlData .='<a href="/spp/edit/'.$row['id_spp'].'" class="mr-1"><i class="fas fa-edit"></i></a>';
+     $htmlData .='<a href="/spp/hapus/'.$row['id_spp'].'"><i class="fas fa-trash-alt"></i></a>';
      $htmlData .='</td>';
      $htmlData .='</tr>';
       
