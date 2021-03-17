@@ -15,7 +15,7 @@
 </div>
 
 <div class="form-group">
-    <button class="btn btn-primary">Simpan Kelas</button>
+    <button class="btn btn-primary"><i class="fas fa-save"></i> Simpan Kelas</button>
 </div>
 
 </form>

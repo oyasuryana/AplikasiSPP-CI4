@@ -7,6 +7,8 @@ use CodeIgniter\HTTP\RequestInterface;
 use CodeIgniter\HTTP\ResponseInterface;
 use Psr\Log\LoggerInterface;
 use App\Models\Modelkelas;
+use App\Models\Modelspp;
+
 /**
  * Class BaseController
  *
@@ -29,6 +31,7 @@ class BaseController extends Controller
 	 */
 	protected $helpers = [];
 	protected $kelas;
+	protected $spp; 
 	/**
 	 * Constructor.
 	 *
@@ -45,6 +48,11 @@ class BaseController extends Controller
 		// Preload any models, libraries, etc, here.
 		//--------------------------------------------------------------------
 		// E.g.: $this->session = \Config\Services::session();
+
+		// membuat instance $this->kelas dari  Modelkelas
 		$this->kelas = New Modelkelas;
+
+		// membuat instance $this->spp dari  Modelspp
+		$this->spp	= New Modelspp;
 	}
 }

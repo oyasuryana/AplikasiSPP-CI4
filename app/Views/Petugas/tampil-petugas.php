@@ -31,7 +31,7 @@
      $htmlData .='<td>'.$row['level'].'</td>';
      $htmlData .='<td class="text-center">';
      $htmlData .='<a href="/petugas/edit/'.$row['id_petugas'].'" class="mr-1"><i class="fas fa-edit"></i></a>';
-     $htmlData .='<a href="/petugas/hapus/'.$row['id_petugas'].'"><i class="fas fa-trash-alt"></a>';
+     $htmlData .='<a href="/petugas/hapus/'.$row['id_petugas'].'"><i class="fas fa-trash-alt"></i></a>';
      $htmlData .='</td>';
      $htmlData .='</tr>';
       

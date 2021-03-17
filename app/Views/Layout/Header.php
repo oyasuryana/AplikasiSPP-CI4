@@ -74,7 +74,7 @@ code {
         <?php if(session()->get('level')=='admin'){?>
         <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-            Master Data
+        <i class="fas fa-database"></i> Master Data
         </a>
         <div class="dropdown-menu">
             <a class="dropdown-item" href="/petugas/tampil">Petugas</a>
@@ -87,7 +87,7 @@ code {
         <!-- Dropdown -->
         <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-            Transaksi
+        <i class="far fa-money-bill-alt"></i> Transaksi
         </a>
         <div class="dropdown-menu">
             <a class="dropdown-item" href="/pembayaran">Pembayaran</a>
