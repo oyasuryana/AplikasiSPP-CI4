@@ -54,8 +54,8 @@ app.baseURL = 'http://localhost:8081/'
 
 database.default.hostname = localhost
 database.default.database = APPSPP_CI4
-database.default.username = user_sql
-database.default.password = 123
+database.default.username = root
+database.default.password = 
 database.default.DBDriver = MySQLi
 
 # database.tests.hostname = localhost
