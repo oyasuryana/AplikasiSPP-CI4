@@ -4,11 +4,13 @@ namespace App\Controllers;
 
 use App\Controllers\BaseController;
 
+
+
 class Siswa extends BaseController
 {
 	public function index()
 	{
-
+		
 		// 1. cek apakah yang login bukan admin
 		if(session()->get('level')!='admin'){
 			return redirect()->to('/petugas/dashboard');
@@ -16,11 +18,15 @@ class Siswa extends BaseController
 		}
 
 		// 2. query builder data siswa
-		$this->buildersiswa->join('kelas','kelas.id_kelas=siswa.id_kelas');
-		$this->buildersiswa->join('spp','spp.id_spp=siswa.id_spp');
-		
+//		$this->buildersiswa->join('kelas','kelas.id_kelas=siswa.id_kelas');
+//		$this->buildersiswa->join('spp','spp.id_spp=siswa.id_spp');
+
+		$this->siswa->join('kelas','kelas.id_kelas=siswa.id_kelas');
+		$this->siswa->join('spp','spp.id_spp=siswa.id_spp');
+
 		// 2. jalankan query builder
-		$data['listSiswa']=$this->buildersiswa->get()->getResult();
+//		$data['listSiswa']=$this->buildersiswa->get()->getResult();
+		$data['listSiswa']=$this->siswa->findAll();
 		
 		// 3. kirim ke view
 		return view('Siswa/tampil',$data);
@@ -57,7 +63,8 @@ class Siswa extends BaseController
 			'id_kelas'=>$this->request->getPost('txtPilihanKelas'),
 			'alamat'=>$this->request->getPost('txtInputAlamat'),
 			'no_telp'=>$this->request->getPost('txtInputHandphone'),
-			'id_spp'=>$this->request->getPost('txtPilihanTarif')
+			'id_spp'=>$this->request->getPost('txtPilihanTarif'),
+			'password'=>md5('123')
 		];
 
 		$this->siswa->insert($dataSiswa);

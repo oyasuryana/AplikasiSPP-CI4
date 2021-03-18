@@ -33,7 +33,7 @@ class BaseController extends Controller
 	protected $db;
 	protected $kelas;
 	protected $spp; 
-	protected $buildersiswa;
+	//protected $buildersiswa;
 	protected $siswa;
 
 	/**
@@ -59,11 +59,13 @@ class BaseController extends Controller
 		// membuat instance $this->spp dari  Modelspp
 		$this->spp	= New Modelspp;
 
+		// mengaktifkan query builder untuk tabel siswa
+		//$this->db      	= \Config\Database::connect();
+		//$this->buildersiswa	= $this->db->table('siswa');
+
 		// membuat instance $this->spp dari  Modelsiswa
 		$this->siswa	= New Modelsiswa;
 
-		// mengaktifkan query builder untuk tabel siswa
-		$this->db      	= \Config\Database::connect();
-		$this->buildersiswa	= $this->db->table('siswa');
+
 	}
 }

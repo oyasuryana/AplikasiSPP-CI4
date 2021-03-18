@@ -14,7 +14,7 @@ class Modelsiswa extends Model
 	protected $returnType           = 'array';
 	protected $useSoftDelete        = false;
 	protected $protectFields        = true;
-	protected $allowedFields        = ['nisn','nis','nama','id_kelas','alamat','no_telp','id_spp'];
+	protected $allowedFields        = ['nisn','nis','nama','id_kelas','alamat','no_telp','id_spp','password'];
 
 	// Dates
 	protected $useTimestamps        = false;

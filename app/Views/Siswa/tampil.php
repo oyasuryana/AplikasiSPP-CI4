@@ -22,26 +22,28 @@
     </thead>
     <tbody>
     <?php
+    
     $htmlData=null;
     $no=null;
     foreach($listSiswa as $row){
         $no++;
         $htmlData ='<tr>'; 
         $htmlData .='<td>'.$no.'</td>'; 
-        $htmlData .='<td>'.$row->nisn.'</td>'; 
-        $htmlData .='<td>'.$row->nis.'</td>'; 
-        $htmlData .='<td>'.$row->nama.'</td>'; 
-        $htmlData .='<td>'.$row->nama_kelas.'</td>'; 
-        $htmlData .='<td>'.$row->alamat.'</td>'; 
-        $htmlData .='<td>'.$row->no_telp.'</td>'; 
-        $htmlData .='<td> Rp '.number_format($row->nominal,0,',','.').'</td>'; 
+        $htmlData .='<td>'.$row['nisn'].'</td>'; 
+        $htmlData .='<td>'.$row['nis'].'</td>'; 
+        $htmlData .='<td>'.$row['nama'].'</td>'; 
+        $htmlData .='<td>'.$row['nama_kelas'].'</td>'; 
+        $htmlData .='<td>'.$row['alamat'].'</td>'; 
+        $htmlData .='<td>'.$row['no_telp'].'</td>'; 
+        $htmlData .='<td> Rp '.$row['nominal'].'</td>'; 
         $htmlData .='<td>';
-        $htmlData .='<a href="/siswa/edit/'.$row->nisn.'" class="mr-2"><i class="fas fa-edit"></i></a>';
-        $htmlData .='<a href="/siswa/hapus/'.$row->nisn.'"><i class="fas fa-trash-alt"></i></a>';
+        $htmlData .='<a href="/siswa/edit/'.$row['nisn'].'" class="mr-2"><i class="fas fa-edit"></i></a>';
+        $htmlData .='<a href="/siswa/hapus/'.$row['nisn'].'"><i class="fas fa-trash-alt"></i></a>';
         $htmlData .='</td>';
         $htmlData .='</tr>'; 
         echo $htmlData;
     }
+    
     ?>
     </tbody>
 </table>
