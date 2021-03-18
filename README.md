@@ -9,13 +9,13 @@ Dikembangkan sebagai project Contoh Uji Kompetensi Program Keahlian Rekayasa Per
 
 Petunjuk Instalasi
 ==================
-1.  Rename file env menjadi .env (titi env)
+1.  Rename file env menjadi .env (titik env)
 2.  Ubah bagian 
 
     app.baseURL = ''
 
     Menjadi alamat URL aplikasi anda
-3.  Ubah environment menjadi proruction jika akan di onlinkan
+3.  Ubah environment menjadi production jika akan di onlinkan
 4.  Ubah seting database di bagian Database
 
 
