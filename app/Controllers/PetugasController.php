@@ -36,6 +36,7 @@ class PetugasController extends BaseController
 		if(count($Userpetugas)==1){
 			// menyiapkan var sesion
 			$session_data=[
+				'id_petugas' 	=> $Userpetugas[0]['id_petugas'],
 				'username' 	=> $Userpetugas[0]['username'],
 				'level'	=> $Userpetugas[0]['level'],
 				'sudahkahLogin' => TRUE

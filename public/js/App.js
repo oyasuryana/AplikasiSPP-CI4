@@ -8,18 +8,24 @@ $(document).ready(function(){
                     $('#txtNamaSiswa').val($.parseJSON(data)[0].nama);  
                     $('#txtKelasSiswa').val($.parseJSON(data)[0].nama_kelas);
                     $('#txtTarifSpp').val($.parseJSON(data)[0].nominal);
+                    $('#txtIdKelasSiswa').val($.parseJSON(data)[0].id_kelas);
+                    $('#txtIdTarifSpp').val($.parseJSON(data)[0].id_spp);
+                    $('#btnSimpan').prop('disabled',false);
                 } else {
 						// Jika Data Tidak Ditemukan
 						$('#txtNamaSiswa').val('');
 						$('#txtKelasSiswa').val('');
+                        $('#txtIdTarifSpp').val('');
 						$('#txtTarifSpp').val('');
+						$('#txtIdKelasSiswa').val('');
                         $('#myModal').modal('show');
                         $('#txtNisn').focus();
 
                         $('#myModal').on('hidden.bs.modal', function () {
+                            $('#btnSimpan').prop('disabled',true);
                             $('#txtNisn').val('');
                             $('#txtNisn').focus();
-                          });
+                        });
                 }
             });
         });

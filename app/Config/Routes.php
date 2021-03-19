@@ -73,8 +73,9 @@ $routes->get('/siswa/edit/(:num)', 'Siswa::editSiswa/$1',['filter'=>'otentifikas
 $routes->post('/siswa/update', 'Siswa::updateSiswa',['filter'=>'otentifikasi']);
 
 $routes->get('/bayar', 'Pembayaran::index',['filter'=>'otentifikasi']);
-$routes->get('/bayar/simpan', 'Pembayaran::simpanBayar',['filter'=>'otentifikasi']);
+$routes->post('/bayar/simpan', 'Pembayaran::simpanBayar',['filter'=>'otentifikasi']);
 $routes->post('/bayar/detailsiswa', 'Pembayaran::detailSiswa',['filter'=>'otentifikasi']);
+$routes->get('/bayar/hapus/(:num)', 'Pembayaran::hapusBayar/$1',['filter'=>'otentifikasi']);
 
 
 /*

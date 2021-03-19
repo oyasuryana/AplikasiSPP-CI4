@@ -9,6 +9,8 @@ use Psr\Log\LoggerInterface;
 use App\Models\Modelkelas;
 use App\Models\Modelspp;
 use App\Models\Modelsiswa;
+use App\Models\Modelbayar;
+
 /**
  * Class BaseController
  *
@@ -35,6 +37,7 @@ class BaseController extends Controller
 	protected $spp; 
 	//protected $buildersiswa;
 	protected $siswa;
+	protected $bayar;
 	/**
 	 * Constructor.
 	 *
@@ -63,10 +66,11 @@ class BaseController extends Controller
 		//$this->db      	= \Config\Database::connect();
 		//$this->buildersiswa	= $this->db->table('siswa');
 
-		// membuat instance $this->spp dari  Modelsiswa
-		
+		// membuat instance $this->siswa dari  Modelsiswa		
 		$this->siswa	= New Modelsiswa;
 		
+		// membuat instance $this->bayar dari  Modelbayar		
+		$this->bayar	= New Modelbayar;
 	}
 
 }
