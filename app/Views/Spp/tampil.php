@@ -1,11 +1,11 @@
 <?= $this->extend('Dashboard') ?>
 <?= $this->section('content') ?>
 
-<h2>Daftar Tarif SPP</h2>
+<h2><i class="far fa-money-bill-alt"></i> Daftar Tarif SPP</h2>
 <p>Berikut ini daftar tarif SPP yang sudah terdaftar dalam database.</p>
 
 <p>
-<a href="/spp/tambah" class="btn btn-primary btn-sm">Tambah Tarif SPP</a>
+<a href="/spp/tambah" class="btn btn-primary btn-sm"><i class="fas fa-plus-circle"></i> Tambah Tarif SPP</a>
 </p>
 <table class="table table-sm table-hovered">
 <thead class="bg-light text-center">

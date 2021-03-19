@@ -8,7 +8,6 @@
     <title>Aplikasi SPP</title>
     <!-- Bootstrap core CSS -->
 <link href="/css/bootstrap.min.css" rel="stylesheet">
-
 <link href="/fontawesome/css/all.min.css" rel="stylesheet">
 
 <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">

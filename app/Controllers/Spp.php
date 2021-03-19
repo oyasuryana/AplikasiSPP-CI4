@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use App\Controllers\BaseController;
 
+// inheritance dari BaseController
 class Spp extends BaseController
 {
 	

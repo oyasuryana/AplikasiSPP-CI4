@@ -35,7 +35,6 @@ class BaseController extends Controller
 	protected $spp; 
 	//protected $buildersiswa;
 	protected $siswa;
-
 	/**
 	 * Constructor.
 	 *
@@ -45,6 +44,7 @@ class BaseController extends Controller
 	 */
 	public function initController(RequestInterface $request, ResponseInterface $response, LoggerInterface $logger)
 	{
+			
 		// Do Not Edit This Line
 		parent::initController($request, $response, $logger);
 
@@ -64,8 +64,9 @@ class BaseController extends Controller
 		//$this->buildersiswa	= $this->db->table('siswa');
 
 		// membuat instance $this->spp dari  Modelsiswa
+		
 		$this->siswa	= New Modelsiswa;
-
-
+		
 	}
+
 }

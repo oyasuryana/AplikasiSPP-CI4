@@ -25,6 +25,7 @@ class Otentifikasi implements FilterInterface
 	 */
 	public function before(RequestInterface $request, $arguments = null)
 	{
+
 		if(!session()->get('sudahkahLogin')){
 			return redirect()->to('/petugas');
 		}
