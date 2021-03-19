@@ -7,4 +7,5 @@
   </div>
 </main>
 
+<?=$this->include('Layout/Modal');?>
 <?=$this->include('Layout/Footer');?>

@@ -89,7 +89,7 @@ code {
         <i class="far fa-money-bill-alt"></i> Transaksi
         </a>
         <div class="dropdown-menu">
-            <a class="dropdown-item" href="/pembayaran">Pembayaran</a>
+            <a class="dropdown-item" href="/bayar">Pembayaran</a>
         </div>
         </li>        
 
