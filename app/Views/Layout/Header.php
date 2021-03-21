@@ -99,9 +99,9 @@ code {
             Laporan
         </a>
         <div class="dropdown-menu">
-            <a class="dropdown-item" href="/histori-pembayaran">Histori Pembayaran</a>
+            <a class="dropdown-item" href="/laporan/form-histori">Histori Pembayaran</a>
           <?php if(session()->get('level')=='admin'){?>
-            <a class="dropdown-item" href="/laporan-penerimaan">Laporan Penerimaan</a>
+            <a class="dropdown-item" href="/laporan/penerimaan">Laporan Penerimaan</a>
             <?php } ?>  
         </div>
         </li>

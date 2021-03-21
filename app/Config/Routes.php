@@ -77,6 +77,10 @@ $routes->post('/bayar/simpan', 'Pembayaran::simpanBayar',['filter'=>'otentifikas
 $routes->post('/bayar/detailsiswa', 'Pembayaran::detailSiswa',['filter'=>'otentifikasi']);
 $routes->get('/bayar/hapus/(:num)', 'Pembayaran::hapusBayar/$1',['filter'=>'otentifikasi']);
 
+$routes->get('/laporan/form-histori', 'Laporan::index',['filter'=>'otentifikasi']);
+$routes->post('/laporan/histori', 'Laporan::historiBayar',['filter'=>'otentifikasi']);
+$routes->get('/laporan/penerimaan', 'Laporan::penerimaanSpp',['filter'=>'otentifikasi']);
+
 
 /*
  * --------------------------------------------------------------------

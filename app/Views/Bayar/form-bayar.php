@@ -50,7 +50,7 @@
 
     <!-- bagian kanan -->
     <div class="col-md-7">
-        <p>Berikut data siswa yang membayar SPP hari ini :</p>
+        <p>Berikut data siswa yang membayar SPP tanggal <?=date('d M Y');?> :</p>
         <table class="table table-sm">
             <thead class="bg-light text-center">
                 <tr>

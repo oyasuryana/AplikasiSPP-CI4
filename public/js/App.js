@@ -30,4 +30,19 @@ $(document).ready(function(){
             });
         });
 
+
+    $('#cariHistori').click(function(){
+        var nisn=$('#txtNisn').val();
+        var url = window.location.origin+'/laporan/histori';
+        $.post(url,{txtNoIndukSiswaNasional:nisn},function(data){
+            if(data!=null){					
+                //   document.getElementById('hasilCariHistori').innerHTML=data; 
+                $('#hasilCariHistori').html(data);  
+
+            }
+        });	
+
+    });
+
+
 });
