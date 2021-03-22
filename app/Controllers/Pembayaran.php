@@ -8,11 +8,11 @@ class Pembayaran extends BaseController
 {
 	public function index()
 	{
+		// ambil data pembayar pada tgl tsb
 		$this->bayar->join('siswa','siswa.nisn=pembayaran.nisn');
 		$this->bayar->join('kelas','kelas.id_kelas=siswa.id_kelas');
 		$data['listPembayaran']=$this->bayar->where('tgl_bayar',date('Y-m-d'))->findAll();
 
-		$data['listKelas']=$this->kelas->findAll();
 		return view('Bayar/form-bayar',$data);
 	}
 

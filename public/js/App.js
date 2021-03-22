@@ -18,8 +18,8 @@ $(document).ready(function(){
                         $('#txtIdTarifSpp').val('');
 						$('#txtTarifSpp').val('');
 						$('#txtIdKelasSiswa').val('');
+                        // menampilkan pesan di modal
                         $('#myModal').modal('show');
-                        $('#txtNisn').focus();
 
                         $('#myModal').on('hidden.bs.modal', function () {
                             $('#btnSimpan').prop('disabled',true);
@@ -36,13 +36,28 @@ $(document).ready(function(){
         var url = window.location.origin+'/laporan/histori';
         $.post(url,{txtNoIndukSiswaNasional:nisn},function(data){
             if(data!=null){					
-                //   document.getElementById('hasilCariHistori').innerHTML=data; 
                 $('#hasilCariHistori').html(data);  
-
             }
         });	
 
     });
 
 
+    $('#tampilLaporan').click(function(){
+        var tglBayarSpp=$('#txtTglBayar').val();
+        var url = window.location.origin+'/laporan/data-penerimaan';
+        $.post(url,{txtTglBayar:tglBayarSpp},function(data){
+            if(data!=null){
+                $('#hasilCariLaporan').html(data);
+            }
+        });
+    });
+
+
+
+    
+
 });
+
+
+

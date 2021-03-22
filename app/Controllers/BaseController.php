@@ -9,6 +9,7 @@ use Psr\Log\LoggerInterface;
 use App\Models\Modelkelas;
 use App\Models\Modelspp;
 use App\Models\Modelsiswa;
+#1
 use App\Models\Modelbayar;
 
 /**
@@ -35,9 +36,10 @@ class BaseController extends Controller
 	protected $db;
 	protected $kelas;
 	protected $spp; 
-	//protected $buildersiswa;
 	protected $siswa;
+#2
 	protected $bayar;
+
 	/**
 	 * Constructor.
 	 *
@@ -69,6 +71,7 @@ class BaseController extends Controller
 		// membuat instance $this->siswa dari  Modelsiswa		
 		$this->siswa	= New Modelsiswa;
 		
+		// # instance
 		// membuat instance $this->bayar dari  Modelbayar		
 		$this->bayar	= New Modelbayar;
 	}
