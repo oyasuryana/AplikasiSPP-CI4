@@ -16,7 +16,9 @@ class Laporan extends BaseController
 		$this->bayar->join('siswa','siswa.nisn=pembayaran.nisn');
 		$this->bayar->join('kelas','kelas.id_kelas=siswa.id_kelas');
 		$data['listPembayaran']=$this->bayar->where('siswa.nisn',$this->request->getPost('txtNoIndukSiswaNasional'))->findAll();
+
 		$arrBulan=[1=>'Januari','Februari','Maret','April','Mei','Juni','Juli','Agustus','September','Oktober','Nopember','Desember'];
+
 		$htmlData=null;
 		$no=null;
 		$htmlData .='<p>Berikut adalah histori pembayaran siswa NISN '.$this->request->getPost('txtNoIndukSiswaNasional').' :</p>';
@@ -142,6 +144,7 @@ class Laporan extends BaseController
 		<a href="/laporan/download-excel/'.$this->request->getPost('txtTglBayar').'" class="btn btn-success btn-sm mr-2">Export Ke Excel</a>
 		<a href="/laporan/download-pdf/'.$this->request->getPost('txtTglBayar').'" class="btn btn-danger btn-sm">Export Ke PDF</a>
 		</p>';			
+
 		echo $htmlData;	
 	
 	}	

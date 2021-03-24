@@ -12,11 +12,12 @@ class Pembayaran extends BaseController
 		$this->bayar->join('siswa','siswa.nisn=pembayaran.nisn');
 		$this->bayar->join('kelas','kelas.id_kelas=siswa.id_kelas');
 		$data['listPembayaran']=$this->bayar->where('tgl_bayar',date('Y-m-d'))->findAll();
-
+		$data['waktu']=$this->waktu;
 		return view('Bayar/form-bayar',$data);
 	}
 
 	public function simpanBayar(){
+		date_default_timezone_set('Asia/Jakarta');
 		$dataPembayaran=[
 			'id_petugas'	=> session()->get('id_petugas'),
 			'nisn'			=> $this->request->getPost('txtNisn'),

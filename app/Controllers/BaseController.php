@@ -12,6 +12,8 @@ use App\Models\Modelsiswa;
 #1
 use App\Models\Modelbayar;
 
+use CodeIgniter\I18n\Time;
+
 /**
  * Class BaseController
  *
@@ -39,6 +41,7 @@ class BaseController extends Controller
 	protected $siswa;
 #2
 	protected $bayar;
+	protected $waktu;
 
 	/**
 	 * Constructor.
@@ -74,6 +77,8 @@ class BaseController extends Controller
 		// # instance
 		// membuat instance $this->bayar dari  Modelbayar		
 		$this->bayar	= New Modelbayar;
+
+		$this->waktu  = Time::now('Asia/Jakarta', 'en_US');;
 	}
 
 }

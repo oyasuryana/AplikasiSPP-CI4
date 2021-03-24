@@ -14,10 +14,4 @@
     </div>
 
 <div id="hasilCariHistori"></div>
-
-
-
-
-
-
 <?=$this->endSection();?>
