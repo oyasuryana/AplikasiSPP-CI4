@@ -72,6 +72,13 @@ $routes->get('/siswa/hapus/(:num)', 'Siswa::hapusSiswa/$1',['filter'=>'otentifik
 $routes->get('/siswa/edit/(:num)', 'Siswa::editSiswa/$1',['filter'=>'otentifikasi']);
 $routes->post('/siswa/update', 'Siswa::updateSiswa',['filter'=>'otentifikasi']);
 
+$routes->post('/siswa/login','Siswa::loginSiswa');
+$routes->get('/siswa/logout', 'Siswa::logout');
+
+$routes->get('/dashboard/siswa','Siswa::dashboardSiswa',['filter'=>'otentifikasisiswa']);
+$routes->get('/siswa/histori-bayar','Siswa::historiPembayaran',['filter'=>'otentifikasisiswa']);
+
+
 $routes->get('/bayar', 'Pembayaran::index',['filter'=>'otentifikasi']);
 $routes->post('/bayar/simpan', 'Pembayaran::simpanBayar',['filter'=>'otentifikasi']);
 $routes->post('/bayar/detailsiswa', 'Pembayaran::detailSiswa',['filter'=>'otentifikasi']);

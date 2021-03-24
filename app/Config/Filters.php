@@ -8,7 +8,7 @@ use CodeIgniter\Filters\DebugToolbar;
 use CodeIgniter\Filters\Honeypot;
 
 use App\Filters\Otentifikasi;
-use App\Filters\Dataloger;
+use App\Filters\Otentifikasisiswa;
 
 
 class Filters extends BaseConfig
@@ -23,7 +23,8 @@ class Filters extends BaseConfig
 		'csrf'     => CSRF::class,
 		'toolbar'  => DebugToolbar::class,
 		'honeypot' => Honeypot::class,
-		'otentifikasi' => Otentifikasi::class
+		'otentifikasi' => Otentifikasi::class,
+		'otentifikasisiswa' => Otentifikasisiswa::class
 	];
 
 	/**

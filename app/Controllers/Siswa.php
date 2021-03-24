@@ -126,4 +126,51 @@ class Siswa extends BaseController
 		return redirect()->to('/siswa');
 	}
 
+	public function loginSiswa(){
+
+		$syarat = [ 
+			'nisn'=> $this->request->getPost('txtUsername'),
+		    'password'=> md5($this->request->getPost('txtPassword'))
+		];	
+
+		$dataSiswa=$this->siswa->where($syarat)->find();
+
+		if(count($dataSiswa)==1){
+			$dataSession=[
+				'nisn'=>$dataSiswa[0]['nisn'],
+				'nama'=>$dataSiswa[0]['nama'],
+				'sudahkahSiswaLogin' => TRUE
+			];
+
+
+			session()->set($dataSession);
+			return redirect()->to('/dashboard/siswa');
+		} else {
+			return redirect()->to('/');
+		}
+	}
+
+	public function dashboardSiswa(){
+		$data['intro']='<div class="jumbotron mt-5">
+		<h1>Hai, '.session()->get('nama').'</h1>
+		<p>Silahkan gunakan halaman ini untuk menampilkan informasi SPP anda !</p>
+	  </div>';
+		return view('/Home/Dashboard',$data);
+	}
+
+	public function historiPembayaran(){
+		$this->bayar->join('siswa','siswa.nisn=pembayaran.nisn');
+		$this->bayar->join('kelas','kelas.id_kelas=siswa.id_kelas');
+		$data['historiBayar']=$this->bayar->where('pembayaran.nisn',session()->get('nisn'))->findAll();
+
+		$data['arrBulan']=[1=>'Januari','Februari','Maret','April','Mei','Juni','Juli','Agustus','September','Oktober','Nopember','Desember'];
+	
+		return view('/Home/HistoriBayar',$data);
+	}
+
+	public function logout(){
+		session()->destroy();
+		return redirect()->to('/');
+	}
+
 }
