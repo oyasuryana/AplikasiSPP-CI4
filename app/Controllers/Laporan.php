@@ -60,7 +60,7 @@ class Laporan extends BaseController
 
 		$this->bayar->join('siswa','siswa.nisn=pembayaran.nisn');
 		$this->bayar->join('kelas','kelas.id_kelas=siswa.id_kelas');
-		$data['listPembayaran']=$this->bayar->where('pembayaran.tgl_bayar',$this->request->getPost('txtTglBayar'))->findAll();
+		$data['listPembayaran']=$this->bayar->where('pembayaran.nisn',$this->request->getPost('txtNoIndukSiswaNasional	'))->findAll();
 		$arrBulan=[1=>'Januari','Februari','Maret','April','Mei','Juni','Juli','Agustus','September','Oktober','Nopember','Desember'];
 		$htmlData=null;
 		$no=null;

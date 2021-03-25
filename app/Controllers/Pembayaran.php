@@ -13,6 +13,7 @@ class Pembayaran extends BaseController
 		$this->bayar->join('kelas','kelas.id_kelas=siswa.id_kelas');
 		$data['listPembayaran']=$this->bayar->where('tgl_bayar',date('Y-m-d'))->findAll();
 		$data['waktu']=$this->waktu;
+
 		return view('Bayar/form-bayar',$data);
 	}
 
@@ -35,6 +36,7 @@ class Pembayaran extends BaseController
 		$this->siswa->join('kelas','kelas.id_kelas=siswa.id_kelas');
 		$this->siswa->join('spp','spp.id_spp=siswa.id_spp');
 		$data=$this->siswa->where('nisn',$this->request->getPost('txtNoIndukSiswaNasional'))->find();
+
 		echo json_encode($data,JSON_FORCE_OBJECT);
 	}
 
