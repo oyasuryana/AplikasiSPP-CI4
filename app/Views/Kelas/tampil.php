@@ -1,9 +1,10 @@
 <?= $this->extend('Dashboard') ?>
 <!-- pembuka section content-->
 <?= $this->section('content') ?>
-<h2><i class="fas fa-school"></i> Daftar Kelas</h2>
+<h2>Daftar Kelas</h2>
 <p>Berikut daftar kelas yang sudah tersimpan dalam database</p>
 
+<?=session()->getFlashData('pesan-error');?>
 
 <a href="/kelas/tambah" class="btn btn-primary btn-sm font-weight-bold"><i class="fas fa-plus-circle"></i> Tambah Kelas</a>
 
@@ -29,7 +30,7 @@ if(isset($listKelas)){
         $htmlData .='<td>'.$row['kompetensi_keahlian'].'</td>';     
         $htmlData .='<td>';
         $htmlData .='<a href="/kelas/edit/'.$row['id_kelas'].'" class="mr-2"><i class="fas fa-edit"></i></a>';
-        $htmlData .='<a href="/kelas/hapus/'.$row['id_kelas'].'" ><i class="fas fa-trash-alt"></i></a>';
+        $htmlData .='<a href="/kelas/hapus/'.$row['id_kelas'].'" data-confirm="Apakah anda yakin akan menghapus data ?"><i class="fas fa-trash-alt"></i></a>';
         $htmlData .='</td>';
         $htmlData .='</tr>';     
 

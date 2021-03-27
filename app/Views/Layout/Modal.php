@@ -16,7 +16,9 @@
 
       <!-- Modal footer -->
       <div class="modal-footer">
-        <button type="button" class="btn btn-info" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-info btn-custom" data-dismiss="modal">Tutup</button>
+        <a class="btn btn-danger" id="dataConfirmOK"> Ya </a>
+
       </div>
 
     </div>

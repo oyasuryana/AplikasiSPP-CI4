@@ -1,7 +1,7 @@
 <?= $this->extend('Dashboard') ?>
 <?= $this->section('content') ?>
 
-<h2><i class="fas fa-user-friends"></i> Data Petugas</h2>
+<h2>Data Petugas</h2>
 <p>Berikut ini daftar petugas pengelola aplikasi SPP yang sudah terdaftar dalam database.</p>
 
 <p>

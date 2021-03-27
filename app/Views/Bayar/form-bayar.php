@@ -78,7 +78,7 @@
                 $htmlData .='<td>'.$bayar['nama_kelas'].'</td>';
                 $htmlData .='<td class="text-right">Rp. '.number_format($bayar['jumlah_bayar'],0,',','.').'</td>';
                 $htmlData .='<td class="text-center">';
-                $htmlData .='<a href="/bayar/hapus/'.$bayar['id_pembayaran'].'" ><i class="fas fa-trash-alt"></i></a>';
+                $htmlData .='<a href="/bayar/hapus/'.$bayar['id_pembayaran'].'" data-confirm="Anda yakin akan menghapus data"><i class="fas fa-trash-alt"></i></a>';
         
                 $htmlData .='</td>';
                 $htmlData .='</tr>';

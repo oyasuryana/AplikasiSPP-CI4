@@ -96,7 +96,7 @@ code {
         <!-- Dropdown -->
         <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-            Laporan
+        <i class="fas fa-copy"></i> Laporan
         </a>
         <div class="dropdown-menu">
             <a class="dropdown-item" href="/laporan/form-histori">Histori Pembayaran</a>
@@ -107,7 +107,7 @@ code {
         </li>
   
         <li class="nav-item">
-          <a class="nav-link" href="/petugas/logout" OnClick="return confirm('Anda Yakin ?')">Logout</a>
+          <a class="nav-link" href="/petugas/logout" data-confirm="Anda yakin akan mengakhiri ?"><i class="fas fa-sign-out-alt"></i> Logout</a>
         </li>        
 
     </ul>

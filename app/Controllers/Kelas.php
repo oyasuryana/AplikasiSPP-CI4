@@ -77,14 +77,21 @@ class Kelas extends BaseController
 
 
 	public function hapusKelas($idKelas){
+
+
 		if(session()->get('level')!='admin'){
 			return redirect()->to('/petugas/dashboard');
 			exit;		
 		}
-		// 2 menjalankan perintah hapus 
-		$this->kelas->where('id_kelas',$idKelas)->delete();
+
+		if(kelasInSiswa($idKelas)==0){
+			// 2 menjalankan perintah hapus 
+			$this->kelas->where('id_kelas',$idKelas)->delete();
+			return redirect()->to('/kelas');
+		} else {
+			return redirect()->to('/kelas')->with('pesan-error','<div class="alert alert-danger alert-duplikat">Data sudah digunakan di master siswa</div>');
+		}
 		// 3 jika berhasil arahkan kembali ke tampil kelas
-		return redirect()->to('/kelas');
 	}
 
 

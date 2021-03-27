@@ -22,7 +22,6 @@
     </thead>
     <tbody>
     <?php
-    
     $htmlData=null;
     $no=null;
     foreach($listSiswa as $row){
@@ -38,7 +37,7 @@
         $htmlData .='<td> Rp '.$row['nominal'].'</td>'; 
         $htmlData .='<td>';
         $htmlData .='<a href="/siswa/edit/'.$row['nisn'].'" class="mr-2"><i class="fas fa-edit"></i></a>';
-        $htmlData .='<a href="/siswa/hapus/'.$row['nisn'].'"><i class="fas fa-trash-alt"></i></a>';
+        $htmlData .='<a href="/siswa/hapus/'.$row['nisn'].'" data-confirm="Anda yakin akan menghapus data"><i class="fas fa-trash-alt"></i></a>';
         $htmlData .='</td>';
         $htmlData .='</tr>'; 
         echo $htmlData;

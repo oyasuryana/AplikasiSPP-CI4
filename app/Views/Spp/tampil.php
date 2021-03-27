@@ -1,9 +1,8 @@
 <?= $this->extend('Dashboard') ?>
 <?= $this->section('content') ?>
 
-<h2><i class="far fa-money-bill-alt"></i> Daftar Tarif SPP</h2>
+<h2>Daftar Tarif SPP</h2>
 <p>Berikut ini daftar tarif SPP yang sudah terdaftar dalam database.</p>
-
 <p>
 <a href="/spp/tambah" class="btn btn-primary btn-sm"><i class="fas fa-plus-circle"></i> Tambah Tarif SPP</a>
 </p>
@@ -29,7 +28,7 @@
      $htmlData .='<td class="text-right">Rp. '.number_format($row['nominal'],0,',','.').'</td>';
      $htmlData .='<td class="text-center">';
      $htmlData .='<a href="/spp/edit/'.$row['id_spp'].'" class="mr-1"><i class="fas fa-edit"></i></a>';
-     $htmlData .='<a href="/spp/hapus/'.$row['id_spp'].'"><i class="fas fa-trash-alt"></i></a>';
+     $htmlData .='<a href="/spp/hapus/'.$row['id_spp'].'" data-confirm="Anda yakin akan menghapus data"><i class="fas fa-trash-alt"></i></a>';
      $htmlData .='</td>';
      $htmlData .='</tr>';
       

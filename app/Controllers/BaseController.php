@@ -11,7 +11,6 @@ use App\Models\Modelspp;
 use App\Models\Modelsiswa;
 #1
 use App\Models\Modelbayar;
-
 use CodeIgniter\I18n\Time;
 
 /**
@@ -34,7 +33,7 @@ class BaseController extends Controller
 	 *
 	 * @var array
 	 */
-	protected $helpers = [];
+	protected $helpers = ['cekrecord'];
 	protected $db;
 	protected $kelas;
 	protected $spp; 
@@ -42,7 +41,6 @@ class BaseController extends Controller
 #2
 	protected $bayar;
 	protected $waktu;
-
 	/**
 	 * Constructor.
 	 *

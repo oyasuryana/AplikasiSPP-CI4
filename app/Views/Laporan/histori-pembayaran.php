@@ -13,5 +13,5 @@
         </div>
     </div>
 
-<div id="hasilCariHistori" style="background-color:#dedede"></div>
+<div id="hasilCariHistori"></div>
 <?=$this->endSection();?>

@@ -16,14 +16,11 @@ class Siswa extends BaseController
 		}
 
 		// 2. query builder data siswa
-//		$this->buildersiswa->join('kelas','kelas.id_kelas=siswa.id_kelas');
-//		$this->buildersiswa->join('spp','spp.id_spp=siswa.id_spp');
 
 		$this->siswa->join('kelas','kelas.id_kelas=siswa.id_kelas');
 		$this->siswa->join('spp','spp.id_spp=siswa.id_spp');
 
 		// 2. jalankan query builder
-//		$data['listSiswa']=$this->buildersiswa->get()->getResult();
 		$data['listSiswa']=$this->siswa->findAll();
 		
 		// 3. kirim ke view
