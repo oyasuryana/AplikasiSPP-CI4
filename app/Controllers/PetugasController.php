@@ -127,9 +127,15 @@ class PetugasController extends BaseController
 			exit;		
 		}
 		
-		$Datapetugas = New Petugas;
-		$Datapetugas->where('id_petugas',$idPetugas)->delete();
-		return redirect()->to('/petugas/tampil');
+		
+		if(petugasInPembayaran($idPetugas)==0){
+			$Datapetugas = New Petugas;
+			$Datapetugas->where('id_petugas',$idPetugas)->delete();
+			return redirect()->to('/petugas/tampil');
+		} else {
+			return redirect()->to('/petugas/tampil')->with('pesan-error','<div class="alert alert-danger">Gagal Hapus ! User tersebut telah melakukan proses input data pembayaran</div>');
+		}
+		
 	}
 
 	public function editPetugas($idPetugas){

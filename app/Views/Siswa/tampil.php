@@ -3,6 +3,8 @@
 <h2>Data Siswa</h2>
 <p>Berikut ini adalah data siswa yang sudah terdaftar dalam database.</p>
 
+<?=session()->getFlashData('pesan-error');?>
+
 <a href="/siswa/tambah" class="btn btn-primary btn-sm mb-2">Tambah Siswa</a>
 
 

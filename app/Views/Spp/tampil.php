@@ -3,6 +3,9 @@
 
 <h2>Daftar Tarif SPP</h2>
 <p>Berikut ini daftar tarif SPP yang sudah terdaftar dalam database.</p>
+
+<?=session()->getFlashData('pesan-error');?>
+
 <p>
 <a href="/spp/tambah" class="btn btn-primary btn-sm"><i class="fas fa-plus-circle"></i> Tambah Tarif SPP</a>
 </p>

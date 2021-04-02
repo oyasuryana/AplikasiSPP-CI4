@@ -73,13 +73,12 @@ class Siswa extends BaseController
 			exit;		
 		}
 
-		try{
+		if(siswaInBayar($nisn)==0){
 			$this->siswa->where('nisn',$nisn)->delete();
-		} catch (\Exception $e) {
-			throw new \Exception("Some message goes here");
+			return redirect()->to('/siswa');
+		} else {
+			return redirect()->to('/siswa')->with('pesan-error','<div class="alert alert-danger">Gagal Hapus ! Siswa sudah melakukan pembayaran </div>');
 		}
-
-		return redirect()->to('/siswa');
 	}
 
 	public function editSiswa($nisn){
@@ -151,6 +150,7 @@ class Siswa extends BaseController
 		$data['intro']='<div class="jumbotron mt-5">
 		<h1>Hai, '.session()->get('nama').'</h1>
 		<p>Silahkan gunakan halaman ini untuk menampilkan informasi SPP anda !</p>
+		<p>Tanggal Login : '.date('d M Y').', waktu menunjukan : '.date('H:i:s').' wib.</p>
 	  </div>';
 		return view('/Home/Dashboard',$data);
 	}

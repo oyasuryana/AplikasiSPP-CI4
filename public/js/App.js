@@ -8,6 +8,7 @@ $(document).ready(function(){
                     $('#txtNamaSiswa').val($.parseJSON(data)[0].nama);  
                     $('#txtKelasSiswa').val($.parseJSON(data)[0].nama_kelas);
                     $('#txtTarifSpp').val($.parseJSON(data)[0].nominal);
+                    $('#txtJmlBayar').val($.parseJSON(data)[0].nominal);
                     $('#txtIdKelasSiswa').val($.parseJSON(data)[0].id_kelas);
                     $('#txtIdTarifSpp').val($.parseJSON(data)[0].id_spp);
                     $('#btnSimpan').prop('disabled',false);
@@ -17,6 +18,7 @@ $(document).ready(function(){
 						$('#txtKelasSiswa').val('');
                         $('#txtIdTarifSpp').val('');
 						$('#txtTarifSpp').val('');
+						$('#txtJmlBayar').val('');
 						$('#txtIdKelasSiswa').val('');
                         $('#myModal').find('.modal-body').text('Maaf data tidak ditemukan !');
                         // menampilkan pesan di modal

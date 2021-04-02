@@ -48,8 +48,12 @@ class Spp extends BaseController
 			exit;		
 		}
 		
-		$this->spp->where('id_spp',$idSPP)->delete();
-		return redirect()->to('/spp');
+		if(tarifInSiswa($idSPP)==0){		
+			$this->spp->where('id_spp',$idSPP)->delete();
+			return redirect()->to('/spp');
+		} else {
+			return redirect()->to('/spp')->with('pesan-error','<div class="alert alert-danger">Gagal Hapus ! Tarif SPP sudah digunakan </div>');
+		}
 	}
 
 	public function editSpp($idSPP){
@@ -76,6 +80,10 @@ class Spp extends BaseController
 		return redirect()->to('/spp');
 	}
 
+	public function testCekBayar(){
+		echo jmlBayarSiswa('001','3','2021');
+
+	}
 
 
 }

@@ -5,7 +5,7 @@
 
 <div class="row">
     <!-- bagian kiri -->
-    <div class="col-md-5">
+    <div class="col-md-6">
     <p>Silahkan masukan data pembayaran SPP pada form dibawah ini</p>
         <form method="POST" action="/bayar/simpan">
 
@@ -36,10 +36,15 @@
             </div>    
 
             <div class="form-group">
+                <label class="font-weight-bold">Jumlah Tagihan</label>
+                <input class="form-control" name="txtTarifSpp" id="txtTarifSpp" readonly>
+            </div>
+
+            <div class="form-group">
                 <label class="font-weight-bold">Jumlah Bayar</label>
-                <input type="hidden" class="form-control" name="txtIdTarifSpp" id="txtIdTarifSpp" readonly>
-               
-                <input class="form-control" name="txtTarifSpp" id="txtTarifSpp" >
+                <input type="hidden" class="form-control" name="txtIdTarifSpp" id="txtIdTarifSpp" readonly>               
+
+                <input class="form-control" name="txtJmlBayar" id="txtJmlBayar" autocomplete="off">
             </div>    
 
             <div class="form-group">
@@ -51,8 +56,10 @@
 
 
     <!-- bagian kanan -->
-    <div class="col-md-7">
+    <div class="col-md-6">
         <p>Berikut data siswa yang membayar SPP tanggal <?=date('d M Y');?> :</p>
+        <?=session()->getFlashData('pesan');?>
+
         <table class="table table-sm">
             <thead class="bg-light text-center">
                 <tr>
