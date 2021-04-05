@@ -87,6 +87,8 @@ $routes->get('/laporan/form-histori', 'Laporan::index',['filter'=>'otentifikasi'
 $routes->post('/laporan/histori', 'Laporan::historiBayar',['filter'=>'otentifikasi']);
 $routes->get('/laporan/penerimaan', 'Laporan::penerimaanSpp',['filter'=>'otentifikasi']);
 $routes->post('/laporan/data-penerimaan', 'Laporan::penerimaanTampil',['filter'=>'otentifikasi']);
+$routes->get('/laporan/tunggakan', 'Laporan::tunggakanSPP',['filter'=>'otentifikasi']);
+$routes->post('/laporan/data-tunggakan', 'Laporan::dataTunggakan',['filter'=>'otentifikasi']);
 
 
 /*

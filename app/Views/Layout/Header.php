@@ -102,6 +102,7 @@ code {
             <a class="dropdown-item" href="/laporan/form-histori">Histori Pembayaran</a>
           <?php if(session()->get('level')=='admin'){?>
             <a class="dropdown-item" href="/laporan/penerimaan">Laporan Penerimaan</a>
+            <a class="dropdown-item" href="/laporan/tunggakan">Laporan Tunggakan</a>
             <?php } ?>  
         </div>
         </li>

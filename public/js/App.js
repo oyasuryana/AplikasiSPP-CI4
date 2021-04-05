@@ -70,6 +70,16 @@ $(document).ready(function(){
         return false;
     });
 
+    $('#tampilTunggakan').click(function(){
+        var idKelas=$('#txtIdKelas').val();
+        var thnLaporan=$('#txtThnLaporan').val();
+        var url=window.location.origin+'/laporan/data-tunggakan';
+        $.post(url,{txtIdKelas:idKelas,txtThnLaporan:thnLaporan},function(data){
+            if(data!=null){
+                $('#hasilCariLaporan').html(data);
+            }
+        })
+    });
 
     $(".alert").delay(2000).slideUp(200, function() {
         $(this).alert('close');

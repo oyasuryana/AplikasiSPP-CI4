@@ -15,7 +15,7 @@ class Laporan extends BaseController
 
 		$this->bayar->join('siswa','siswa.nisn=pembayaran.nisn');
 		$this->bayar->join('kelas','kelas.id_kelas=siswa.id_kelas');
-		$data['listPembayaran']=$this->bayar->where('siswa.nisn',$this->request->getPost('txtNoIndukSiswaNasional'))->findAll();
+		$data['listPembayaran']=$this->bayar->where('siswa.nisn',$this->request->getPost('txtNoIndukSiswaNasional'))->orderBy('tgl_bayar','asc')->findAll();
 
 		$arrBulan=[1=>'Januari','Februari','Maret','April','Mei','Juni','Juli','Agustus','September','Oktober','Nopember','Desember'];
 
@@ -60,7 +60,7 @@ class Laporan extends BaseController
 
 		$this->bayar->join('siswa','siswa.nisn=pembayaran.nisn');
 		$this->bayar->join('kelas','kelas.id_kelas=siswa.id_kelas');
-		$data['listPembayaran']=$this->bayar->where('pembayaran.nisn',$this->request->getPost('txtNoIndukSiswaNasional	'))->findAll();
+		$data['listPembayaran']=$this->bayar->where('pembayaran.nisn',$this->request->getPost('txtNoIndukSiswaNasional'))->orderBy('tgl_bayar','asc')->findAll();
 		$arrBulan=[1=>'Januari','Februari','Maret','April','Mei','Juni','Juli','Agustus','September','Oktober','Nopember','Desember'];
 		$htmlData=null;
 		$no=null;
@@ -145,8 +145,35 @@ class Laporan extends BaseController
 		<a href="/laporan/download-pdf/'.$this->request->getPost('txtTglBayar').'" class="btn btn-danger btn-sm">Export Ke PDF</a>
 		</p>';			
 
-		echo $htmlData;	
-	
+		echo $htmlData;		
 	}	
+
+
+	public function tunggakanSPP(){
+		$data['listKelas']=$this->kelas->findAll();
+		return view('Laporan/tunggakan-spp',$data);
+	}
+
+	public function dataTunggakan(){
+		/* 
+		SELECT siswa.nama,siswa.id_kelas,pembayaran.nisn, pembayaran.bulan_bayar,pembayaran.tahun_bayar,
+		spp.nominal, sum(pembayaran.jumlah_bayar) as total_bayar FROM pembayaran 
+		JOIN spp ON spp.id_spp=pembayaran.id_spp
+		JOIN siswa ON siswa.nisn=pembayaran.nisn
+		WHERE pembayaran.tahun_bayar=2021 AND pembayaran.bulan_bayar=4 AND siswa.id_kelas=4
+		GROUP BY pembayaran.nisn, pembayaran.bulan_bayar,pembayaran.tahun_bayar
+		*/		
+		
+		$where=[
+			'id_kelas' =>1,
+			'tahun_bayar'=>2021,
+			'bulan_bayar'=>4
+		];
+
+		$this->bayar->join('siswa','siswa.nisn=pembayaran.nisn');
+		$this->bayar->join('kelas','kelas.id_kelas=siswa.id_kelas');
+		$data['listPembayaran']=$this->bayar->where('siswa.nisn',$this->request->getPost('txtNoIndukSiswaNasional'))->orderBy('tgl_bayar','asc')->findAll();
+		//echo $this->request->getPost('txtIdKelas').'-'.$this->request->getPost('txtThnLaporan');
+	}
 
 }
